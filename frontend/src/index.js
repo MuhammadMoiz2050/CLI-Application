@@ -4,10 +4,6 @@ import './index.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import Fileupload from './components/fileupload';
-// import DrawGraph from './components/drawGraph';
-// import FileDelete from './components/fileDelete';
-// import FetchPrice from './components/fetchPrice';
 import Cli from './components/cli';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +12,7 @@ root.render(
   //   <App />
   // </React.StrictMode>
 
+  // Main router element to define all routing paths.
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
