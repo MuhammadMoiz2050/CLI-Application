@@ -198,7 +198,7 @@ export default function Cli() {
         const trimmedCommand = command.trim().toLowerCase();
         if (trimmedCommand.startsWith('help')) {
         //    setShowHelp(true);
-        const helpMessage = `Available commands:\n- help: Show available commands\n- about: Display information about this CLI\n- fetch-price [coin]: Fetch the current price of a specified cryptocurrency\n- upload: Opens the file explorer to allow uploading csv files only.\n- draw [file] [columns]: Draws the chart of the specified columns of the file present in the draw-chart directory.\n- delete [filename]: Delete the selected file from the draw-chart directory.\n- cls: Clear the screen history.\n- remove-graph: Remove the graph from the screen.`;
+        const helpMessage = `Available commands:\n- help: Show available commands\n- about: Display information about this CLI\n- fetch-price [coin]: Fetch the current price of a specified cryptocurrency\n- upload: Opens the file explorer to allow uploading csv files only.\n- draw [file] [columns]: Draws the chart of the specified columns of the file present in the draw-chart directory.\n- delete [filename]: Delete the selected file from the draw-chart directory.\n- cls: Clear the screen history.`;
         const helpMessageArray = helpMessage.split('\n');    
         setCommandHistory((prevHistory) => [...prevHistory, `guest@Chromium-x64-CLI:$ ~ ${command}`]);
         setCommandHistory((prevHistory) => [...prevHistory, ...helpMessageArray]);
@@ -235,9 +235,9 @@ export default function Cli() {
             setShowGraph(false);
           executeDrawCommand();
         }
-        else if (trimmedCommand.startsWith('remove-graph')){
-            setShowGraph(false);
-        } 
+        // else if (trimmedCommand.startsWith('remove-graph')){
+        //     setShowGraph(false);
+        // } 
         else if (trimmedCommand.startsWith('fetch-price')) {
             const parts = trimmedCommand.split(' ');
             if (parts.length === 2){
