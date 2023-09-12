@@ -8,7 +8,8 @@ const router = express.Router();
 const storage = multer.diskStorage({
     destination: './draw-chart',
     filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`);
+        const formattedFilename = file.originalname.replaceAll(' ','-'); // Replace all the space ' ' occurences in the file name with '-'
+        cb(null, `${Date.now()}-${formattedFilename}`);
     },
 });
 
