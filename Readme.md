@@ -100,3 +100,5 @@ The following third-party libraries and frameworks are used in this project:
 - [axios](https://axios-http.com/): Promise-based HTTP client for making API requests.
 - [PapaParse](https://www.papaparse.com/): Library for parsing CSV data.
 - [Recharts](http://recharts.org/): Charting library for React applications.
+
+&copy; 2023 ANTEMATTER®. All rights reserved.
