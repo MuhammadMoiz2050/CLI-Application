@@ -137,7 +137,8 @@ export default function Cli() {
     if (parts.length !== 3) {
 
       setError('Invalid command format. Use: "draw [file] [columns]"');
-      setCommandHistory([...commandHistory, message]);
+      setCommandHistory((prevHistory) => [...prevHistory, `guest@Chromium-x64-CLI:$ ~ ${command}`]);
+      setCommandHistory((prevHistory) => [...prevHistory, 'Invalid command format. Use: "draw [file] [columns]"']);
       return;
     }
 
@@ -163,11 +164,13 @@ export default function Cli() {
         setColumns(commandColumns);
 
         setShowGraph(true);
+        setCommandHistory((prevHistory) => [...prevHistory, `guest@Chromium-x64-CLI:$ ~ ${command}`]);
       }
     } catch (error) {
       // Handle errors during drawing
       setError(`Error drawing chart: ${error.message}`);
-      setCommandHistory([...commandHistory, message]);
+      setCommandHistory((prevHistory) => [...prevHistory, `guest@Chromium-x64-CLI:$ ~ ${command}`]);
+      setCommandHistory((prevHistory) => [...prevHistory, `Error drawing graph for "${fileName}": ${error.message}`]);
     }
   };
 
@@ -337,8 +340,6 @@ export default function Cli() {
           autoFocus
         />
         {/* <button onClick={handleEnterKey}>Execute Command</button> */}
-        {error && <p className="error">{error}</p>}
-        {/* {message && <p>{message}</p>} */}
 
         {/* Allow file selection for the "upload" command */}
         {command.trim().toLowerCase().startsWith('upload') && (
@@ -368,7 +369,7 @@ export default function Cli() {
         )}
 
         <footer>
-        Copyright© 2023 ANTEMATTER®. All rights reserved.
+          Copyright© 2023 ANTEMATTER®. All rights reserved.
         </footer>
       </div>
     </>
