@@ -368,7 +368,7 @@ export default function Cli() {
         )}
 
         <footer>
-          Copyright ANTEMATTER, all rights reserved®
+        Copyright© 2023 ANTEMATTER®. All rights reserved.
         </footer>
       </div>
     </>
