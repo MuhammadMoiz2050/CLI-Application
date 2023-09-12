@@ -85,8 +85,8 @@ Follow these instructions to set up and run the CLI Application on your local ma
 - **about**: Display information about the CLI.
 - **fetch-price [coin]**: Fetch the current price of a specified cryptocurrency.
 - **upload**: Upload a CSV file.
-- **draw [file] [columns]**: Draw a chart using data from a CSV file.
-- **delete [filename]**: Delete a file from the server.
+- **draw [file] [columns]**: Draw a chart using data from a CSV file. Use the exact name stored in the 'draw-chart' directory, for example, "draw 1694534621744-Solana-Historical-Data.csv High,Low".
+- **delete [filename]**: Delete a file from the server. Use the exact name stored with the timestamp in the 'draw-chart' directory, for example, "delete 1694534621744-Solana-Historical-Data.csv"
 - **cls**: Clear the screen history.
 
 
